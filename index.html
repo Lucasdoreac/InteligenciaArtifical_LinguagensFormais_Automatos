@@ -101,6 +101,7 @@
   <button data-panel="diario" class="active">Diário de Aulas</button>
   <button data-panel="atividades">Atividades</button>
   <button data-panel="chomsky">Chomsky</button>
+  <button data-panel="exercicios">Lista de Exercícios</button>
 </nav>
 
 <main>
@@ -115,15 +116,18 @@
       <thead><tr><th>Semana</th><th>Data</th><th>Conteúdo</th></tr></thead>
       <tbody>
         <tr><td>1</td><td>04/08</td><td>Aula Inaugural — plano de ensino, PBL, GitHub</td></tr>
-        <tr><td>2</td><td>11/08</td><td>Fundamentos de Linguagens Formais</td></tr>
-        <tr><td>3</td><td>18/08</td><td>Gramáticas Formais — Hierarquia de Chomsky</td></tr>
+        <tr><td>2</td><td>11/08</td><td>Fundamentos de Linguagens Formais <span class="tag done" style="margin:0">0,5pt</span></td></tr>
+        <tr><td>3</td><td>18/08</td><td>Gramáticas Formais — tipos segundo Chomsky</td></tr>
         <tr><td>4</td><td>25/08</td><td>Autômatos Finitos (AFD/AFN)</td></tr>
         <tr><td>5</td><td>01/09</td><td>Expressões Regulares</td></tr>
         <tr><td>6</td><td>08/09</td><td>Autômatos de Pilha — Linguagens Livres de Contexto</td></tr>
         <tr><td>7</td><td>15/09</td><td>Máquinas de Turing</td></tr>
-        <tr><td>8</td><td>22/09</td><td><strong>Foco A2</strong></td></tr>
+        <tr><td>8</td><td>22/09</td><td><strong>Avaliação A2</strong></td></tr>
       </tbody>
     </table>
+    <div class="callout">
+      📊 <strong>Composição de notas</strong> (fonte: Plano de Aulas oficial): <strong>A1</strong> (regimental, 17-24/11) + <strong>A2</strong> (prática, ao longo do semestre) = 5,0 + 5,0. A2 se divide em <strong>Fase 1 — LFA</strong>: 4 atividades de 0,5pt (2,0pt) e <strong>Fase 2 — IA</strong>: 2 atividades de 1,0pt (2,0pt). Aprovação exige <strong>NF ≥ 6,0</strong> e <strong>75% de frequência</strong> mínima.
+    </div>
   </div>
 
   <div class="card">
@@ -279,6 +283,110 @@ aa:  S → aS → aaS → aaε → aa</code></pre>
       <li>a arquitetura em camadas cobre mais da ementa da disciplina de uma vez (Semana 4 + Semana 6).</li>
     </ol>
     <p>É um exemplo real — não de sala de aula — de quando vale a pena "subir" na hierarquia mesmo sem necessidade formal estrita.</p>
+  </div>
+
+</section>
+
+<!-- ===================== LISTA DE EXERCÍCIOS ===================== -->
+<section id="exercicios" class="panel">
+
+  <div class="card">
+    <span class="tag pending">⚠️ Não confirmado como oficial desta turma</span>
+    <h2>Lista de Exercícios 1 — Autômatos Finitos</h2>
+    <div class="callout">
+      ⚠️ <strong>Ressalva importante:</strong> este documento está datado de
+      <strong>11 de março de 2015</strong> — provavelmente material reciclado
+      de outro semestre/instituição que a professora subiu ao caderno como
+      <em>referência de estudo</em>, não confirmadamente o enunciado oficial
+      da turma 2026/2. É o mesmo padrão de um caso anterior (um artigo de
+      2010 sobre compiladores que apareceu no material sem ser o enunciado
+      real). Trate como <strong>material de prática opcional</strong>
+      baseado em Menezes (2002) e Hopcroft (2002), útil pra estudar Autômatos
+      Finitos com antecedência — mas confirme com a professora antes de
+      tratar como dever valendo nota.
+    </div>
+
+    <h3>1–2. Conceitos e AFDs sobre Σ = {a, b}</h3>
+    <ol>
+      <li>Explique o que é Alfabeto, Palavra e Linguagem de acordo com a disciplina de LFA.</li>
+      <li>Desenvolva AFDs que reconheçam, sobre <code>Σ = {a, b}</code>:
+        <ul>
+          <li>(a) <code>{w | w possui aaa como subpalavra}</code></li>
+          <li>(b) <code>{w | o sufixo de w é aaa}</code></li>
+          <li>(c) <code>{w | w possui um número ímpar de a e b}</code></li>
+          <li>(d) <code>{w | w possui um número par de a e ímpar de b OU par de b e ímpar de a}</code></li>
+          <li>(e) <code>{w | o terceiro símbolo da direita para a esquerda de w é a}</code></li>
+          <li>(f) <code>{w | w não possui aba como subpalavra}</code></li>
+          <li>(g) <code>{aᵐbⁿ | m ≥ 0, n ≥ 0}</code></li>
+          <li>(h) <code>{aᵐbⁿ | m > 0, n ≥ 0}</code></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>3. AFDs sobre Σ = {0, 1}</h3>
+    <ul>
+      <li>(a) Cadeias terminadas em <code>00</code>.</li>
+      <li>(b) Cadeias com três zeros consecutivos, não necessariamente no final.</li>
+      <li>(c) Cadeias com <code>011</code> como subpalavra.</li>
+      <li>(d) Cadeias com tamanho exato de 6.</li>
+      <li>(e) <code>{w | w ∈ Σ*, |w| = 4}</code></li>
+      <li>(f) Nº de 0's múltiplo de 5 <em>e</em> nº de 1's múltiplo de 3.</li>
+      <li>(g) Palavras que começam e/ou terminam em <code>01</code>.</li>
+    </ul>
+
+    <h3>4–8. Função de programa, AFD × AFN, conversão</h3>
+    <ol start="4">
+      <li>Escreva a função de programa (tabela) do autômato da questão 2c. Mostre a extensão para a palavra <code>ababba</code>.</li>
+      <li>Mostre todos os elementos de <code>ACEITA(M) ∩ REJEITA(M)</code>, para M = autômato da questão 2b.</li>
+      <li>Qual a diferença entre a função de programa de um AFD e de um AFN?</li>
+      <li>Converta o AFN abaixo em AFD:
+        <pre><code>δ    0        1
+→p  {p, q}   {p}
+ q  {r}      {r}
+ r  {s}      ∅
+*s  {s}      {s}</code></pre>
+      </li>
+      <li>Converta o AFN abaixo em AFD e descreva informalmente a linguagem aceita:
+        <pre><code>δ    0        1
+→p  {p, q}   {p}
+ q  {r, s}   {t}
+ r  {p, r}   {t}
+*s  ∅        ∅
+*t  ∅        ∅</code></pre>
+      </li>
+    </ol>
+
+    <h3>9–12. Projetar AFN, converter, provar impossibilidade</h3>
+    <ol start="9">
+      <li>Projete AFNs que reconheçam:
+        <ul>
+          <li>(a) <code>abc</code>, <code>abd</code>, <code>aacd</code>. Σ = {a,b,c,d}.</li>
+          <li>(b) <code>0101</code>, <code>101</code>, <code>011</code>.</li>
+          <li>(c) <code>ab</code>, <code>ac</code>, <code>ca</code>. Σ = {a,b,c}.</li>
+        </ul>
+      </li>
+      <li>Converta cada AFN do Ex. 9 em AFD.</li>
+      <li>É possível construir um autômato que reconheça <code>L = {aⁿbⁿ | n ≥ 0}</code>? Se não, justifique e compare com a questão 2g. Se sim, mostre o autômato.</li>
+      <li>Construa um AFN (e depois um AFD a partir dele) para:
+        <ul>
+          <li>(a) <code>L = {w ∈ {a,b}* | |w| mod 3 = 0}</code></li>
+          <li>(b) <code>L = {w ∈ {a,b}* | |w| mod 5 ≠ 0}</code></li>
+          <li>(c) <code>L = {w ∈ {a,b}* | |w|ₐ mod 3 > 1}</code></li>
+          <li>(d) <code>L = {w ∈ {a,b}* | |w|ₐ mod 3 > |w|_b mod 3}</code></li>
+          <li>(e) <code>L = {w ∈ {a,b}* | (|w|ₐ − |w|_b) mod 3 > 0}</code></li>
+          <li>(f) <code>{w | o quinto símbolo da direita para a esquerda de w é a}</code> (software permitido)</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>13. AFNε — cadeia completa de conversões</h3>
+    <p>Seja <code>M = (Q, Σ, δ, q0, F)</code>, com <code>Q = {q0,q1,q2,q3}</code>, <code>Σ = {0,1}</code>, <code>F = {q3}</code>:</p>
+    <ol type="a">
+      <li>Construa um AFN M′ sem movimento vazio equivalente a M.</li>
+      <li>A partir de M′, construa um AFD M″ equivalente a M.</li>
+      <li>A partir de M″, construa um AFD M‴ equivalente a M com número mínimo de estados.</li>
+      <li>Escreva a expressão regular que denota L(M).</li>
+    </ol>
   </div>
 
 </section>
