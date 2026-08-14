@@ -87,6 +87,13 @@
   ul{padding-left:1.3rem}
   li{margin-bottom:.3rem}
   a{color:var(--accent)}
+  .doc-link{
+    display:inline-block; margin-right:0.8rem; margin-bottom:0.8rem;
+    padding:0.6rem 1rem; background:var(--accent-soft); border:1px solid var(--accent);
+    border-radius:6px; text-decoration:none; color:var(--accent); font-size:.95rem;
+    transition:background .15s, color .15s;
+  }
+  .doc-link:hover{background:var(--accent); color:#fff}
   footer{text-align:center; color:var(--text-muted); font-size:.8rem; padding:2rem 1rem}
 </style>
 </head>
@@ -125,7 +132,7 @@
       </tbody>
     </table>
     <div class="callout">
-      📊 <strong>Composição de notas</strong> (fonte: Plano de Aulas oficial): <strong>A1</strong> (regimental, 17-24/11) + <strong>A2</strong> (prática, ao longo do semestre) = 5,0 + 5,0. A2 se divide em <strong>Fase 1 — LFA</strong>: 4 atividades de 0,5pt (2,0pt) e <strong>Fase 2 — IA</strong>: 2 atividades de 1,0pt (2,0pt). Aprovação exige <strong>NF ≥ 6,0</strong> e <strong>75% de frequência</strong> mínima.
+      📊 <strong>Composição de notas</strong> (fonte: Plano de Aulas oficial): <strong>A1</strong> (regimental, 17-24/11) + <strong>A2</strong> (prática, ao longo do semestre) = 5,0 + 5,0. A2 se [...]
     </div>
   </div>
 
@@ -151,7 +158,7 @@
     <p>Para a palavra <code>ab</code>: prefixos <code>{ε, a, ab}</code>, sufixos <code>{ε, b, ab}</code>.</p>
 
     <h3>Alfabeto (Σ) e Σ*</h3>
-    <p><code>Σ</code> é um conjunto finito de símbolos (ex: <code>Σ = {a, b}</code>). <code>Σ*</code> é o conjunto de <strong>todas</strong> as cadeias finitas possíveis com esses símbolos, incluindo <code>ε</code> — um conjunto infinito, mesmo que cada palavra individual tenha tamanho finito.</p>
+    <p><code>��</code> é um conjunto finito de símbolos (ex: <code>Σ = {a, b}</code>). <code>Σ*</code> é o conjunto de <strong>todas</strong> as cadeias finitas possíveis com esses símbolos, in[...]
 
     <h3>Linguagem formal — L</h3>
     <p><code>L ⊆ Σ*</code>: uma linguagem é qualquer subconjunto de todas as cadeias possíveis. Pode ser finita ou infinita.</p>
@@ -161,7 +168,7 @@
     <pre><code>G = ({S}, {a}, {S → aS | ε}, S)
 L(G) = {aⁿ | n ≥ 0} = {ε, a, aa, aaa, ...}</code></pre>
 
-    <div class="callout">💡 O símbolo <code>→</code> muda de sentido conforme o contexto: em <strong>lógica</strong> é implicação ("se... então"); em <strong>gramáticas</strong> é produção ("gera/deriva em").</div>
+    <div class="callout">💡 O símbolo <code>→</code> muda de sentido conforme o contexto: em <strong>lógica</strong> é implicação ("se... então"); em <strong>gramáticas</strong> é produç[...]
   </div>
 
   <div class="card">
@@ -174,6 +181,15 @@ L(G) = {aⁿ | n ≥ 0} = {ε, a, aa, aaa, ...}</code></pre>
 
 <!-- ===================== ATIVIDADES ===================== -->
 <section id="atividades" class="panel">
+
+  <div class="card">
+    <h2>📚 Materiais de Estudo — Unidade 1</h2>
+    <p>Acesse os documentos detalhados em Markdown:</p>
+    <div>
+      <a href="https://github.com/Lucasdoreac/InteligenciaArtificial_LinguagensFormais_Automatos/blob/main/Unidade1_LinguagensFormais/Atividades_Aula1.md" class="doc-link">📄 Atividades da Aula 1</a>
+      <a href="https://github.com/Lucasdoreac/InteligenciaArtificial_LinguagensFormais_Automatos/blob/main/Unidade1_LinguagensFormais/Checklist_Aula1.md" class="doc-link">✅ Checklist da Aula 1</a>
+    </div>
+  </div>
 
   <div class="card">
     <span class="tag done">Entregue</span>
@@ -253,16 +269,16 @@ aa:  S → aS → aaS → aaε → aa</code></pre>
         <tr><td>0</td><td>Irrestrita (recursivamente enumerável)</td><td>Máquina de Turing</td><td>o limite do que qualquer computador pode computar</td></tr>
       </tbody>
     </table>
-    <div class="callout">🧠 Regra de ouro pra guardar: <strong>quanto mais "aninhamento" ou "contagem sem limite" uma linguagem exige, mais alta ela sobe na hierarquia.</strong> Uma linguagem regular não consegue "contar" parênteses abrindo e fechando corretamente sem limite — por isso validação de parênteses balanceados já exige Livre de Contexto (pilha).</div>
+    <div class="callout">🧠 Regra de ouro pra guardar: <strong>quanto mais "aninhamento" ou "contagem sem limite" uma linguagem exige, mais alta ela sobe na hierarquia.</strong> Uma linguagem regular[...]
   </div>
 
   <div class="card">
     <h2>Por que isso importa na prática (não só na prova)</h2>
     <ul>
-      <li><strong>Compiladores e interpretadores.</strong> Todo compilador tem um analisador léxico (regular, Tipo 3) e um analisador sintático (livre de contexto, Tipo 2) — é literalmente a arquitetura em camadas que a disciplina está ensinando.</li>
-      <li><strong>Expressões regulares (regex).</strong> Todo `grep`, toda validação de formulário com regex, é uma gramática Tipo 3 na prática. Saber os limites da hierarquia explica por que <em>"não dá pra fazer parser de HTML só com regex"</em> — é uma linguagem que aninha, logo não é regular.</li>
-      <li><strong>Processamento de linguagem natural / IA.</strong> A ponte entre Fase 1 (linguagens formais) e Fase 2 (IA) da disciplina existe porque toda a base teórica de "que padrão uma máquina consegue reconhecer" vem daqui — inclusive para entender por que LLMs modernos não seguem regras fixas de gramática, e sim probabilidade.</li>
-      <li><strong>Limites da computação.</strong> A Máquina de Turing (Tipo 0) não é só "o computador mais poderoso" — ela define o próprio limite teórico do que é computável. O Problema da Parada (que a disciplina toca na Semana 7) mostra que existem problemas que <em>nenhum</em> algoritmo, por mais poderoso, consegue resolver sempre.</li>
+      <li><strong>Compiladores e interpretadores.</strong> Todo compilador tem um analisador léxico (regular, Tipo 3) e um analisador sintático (livre de contexto, Tipo 2) — é literalmente a arquitetura[...]
+      <li><strong>Expressões regulares (regex).</strong> Todo `grep`, toda validação de formulário com regex, é uma gramática Tipo 3 na prática. Saber os limites da hierarquia explica por que [...]
+      <li><strong>Processamento de linguagem natural / IA.</strong> A ponte entre Fase 1 (linguagens formais) e Fase 2 (IA) da disciplina existe porque toda a base teórica de "que padrão uma máquina[...]
+      <li><strong>Limites da computação.</strong> A Máquina de Turing (Tipo 0) não é só "o computador mais poderoso" — ela define o próprio limite teórico do que é computável. O Problema[...]
     </ul>
   </div>
 
