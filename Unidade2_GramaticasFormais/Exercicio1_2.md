@@ -83,11 +83,23 @@ $$
 Responda:
 
 1. Quantos símbolos existem no alfabeto?
-2. Quais são os símbolos?
-3. O símbolo `a` pertence ao alfabeto?
-4. O símbolo `d` pertence ao alfabeto?
-5. Escreva uma palavra formada por símbolos desse alfabeto.
 
+R: 3 Simbolos
+
+2. Quais são os símbolos?
+
+R: Letras "a", "b" e "c" minúsculas.
+
+3. O símbolo `a` pertence ao alfabeto?
+
+R: Sim.
+
+4. O símbolo `d` pertence ao alfabeto?
+
+R: Não.
+
+5. Escreva uma palavra formada por símbolos desse alfabeto.
+R: "babaca".
 ---
 
 # 2. Palavras sobre um alfabeto
