@@ -1,5 +1,6 @@
 # Exercícios Comentados — Aulas 01 e 02
 
+
 ## Linguagens Formais, Alfabeto, Linguagens e Gramáticas
 
 **Disciplina:** Linguagens Formais e Autômatos
