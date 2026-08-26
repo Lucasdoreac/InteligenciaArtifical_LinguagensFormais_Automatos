@@ -1,5 +1,4 @@
-# Exercícios Comentados — Aulas 01 e 02
-
+# Exercícios Comentados — Aulas 01 e 02estudante
 
 ## Linguagens Formais, Alfabeto, Linguagens e Gramáticas
 
@@ -220,11 +219,11 @@ Classifique cada sequência como **palavra válida** ou **não válida**:
 
 | Sequência | Válida? | Justificativa |
 | --------- | ------- | ------------- |
-| `0101`    |         |               |
-| `00110`   |         |               |
-| `012`     |         |               |
-| `111`     |         |               |
-| `10a`     |         |               |
+| `0101`    |    S    |      ambos pertencem ao conjunto         |
+| `00110`   |    S    |      ambos pertencem ao conjunto         |
+| `012`     |    N    |      2 Não Pertence        |
+| `111`     |    S    |         1 Pertence         |
+| `10a`     |    N    |     "a" não pertence       |
 
 ---
 
@@ -345,12 +344,17 @@ $$
 Determine se as afirmações são **verdadeiras ou falsas**:
 
 1. $0 \in \Sigma$
+R: V
 2. $1 \in \Sigma$
+R: V
 3. $01 \in \Sigma$
+R: F - "palavra não letra"
 4. $01 \in \Sigma^*$
+R: V 
 5. $2 \in \Sigma$
+R: F
 6. $101 \in \Sigma^*$
-
+R: V
 Justifique cada resposta.
 
 ---
@@ -456,12 +460,17 @@ $$
 Determine se cada palavra pertence à linguagem:
 
 1. $0 \in L$
+R: V
 2. $01 \in L$
+R: V
 3. $0111 \in L$
+R: V
 4. $10 \in L$
+R: F
 5. $111 \in L$
+R: F
 6. $011 \in L$
-
+R: v
 ---
 
 # 5. Descrevendo uma linguagem por padrão
@@ -564,9 +573,16 @@ L = {b^n \mid n \geq 1}
 $$
 
 1. Escreva as cinco primeiras palavras.
+R: b, bb, bbb, bbbb, bbbbbb.
+
 2. Explique o significado de $b^n$.
+R:  B quantas vezes houverem.
+
 3. A palavra `bbbbbb` pertence à linguagem?
+R: Sim.
+
 4. A palavra vazia ($\varepsilon$) pertence à linguagem?
+R: Sim.
 
 ---
 
@@ -667,6 +683,10 @@ $$
 $$
 L={\varepsilon}
 $$
+R:
+∅ = representa um conjunto que não possui elementos. A linguagem não possui nenhuma palavra.
+ε = representa uma palavra que possui zero símbolos. Essa linguagem possui uma palavra. Essa palavra possui comprimento zero.
+
 
 Depois responda:
 
