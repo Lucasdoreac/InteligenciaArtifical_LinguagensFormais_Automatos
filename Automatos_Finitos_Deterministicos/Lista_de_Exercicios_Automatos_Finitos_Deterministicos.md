@@ -13,7 +13,7 @@
 |---|---|
 | Turma | 2267189 - Linguagens Formais e Autômatos - N1_3132_-_C.C_ (Not) _SEDE_UDF |
 | Data | 05/09/2026 |
-| Integrante 1 | Lucas Dórea Cardoso | 
+| Integrante 1 | Lucas Dórea Cardoso | 37277782
 | Integrante 2 | Deivid Cerqueira| 39670953
 
 
