@@ -19,8 +19,8 @@ Este repositório contém exercícios, projetos e trabalhos relacionados aos con
 
 | Nome | RGM | Função |
 |------|-----|--------|
-| Lucas | 37277782 | Desenvolvedor Principal |
-| Deivid Cerqueira | 39670953 | Colaborador |
+| Lucas | 37277782 | 
+| Deivid Cerqueira | 39670953 |
 
 ## 🛠️ Tecnologias
 
